@@ -72,3 +72,24 @@ global background thread.
 So that is a crash course on GCD.
 This course is mostly about async and await and actors and the new features of the swift language.
 So let's go ahead and start using the new features now.
+
+A] Async Await:-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
