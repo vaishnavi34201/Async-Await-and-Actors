@@ -3,7 +3,9 @@
 
 2 ] Dates App - MVVM
 
-3 ] News App
+3 ] Continuation
+
+4 ] News App
 
 
 1 ] Async Await
@@ -79,8 +81,27 @@ So that is a crash course on GCD.
 This course is mostly about async and await and actors and the new features of the swift language.
 So let's go ahead and start using the new features now.
 
-A] Async Await:-
+3 ] Continuation
+There are several APIs that Apple has introduced which already has async and await.
+This includes your session, HealthKit notification, core data and even music kit.
+What about the code that is using the completion handlers and callbacks?
+How would we take that and convert it to async and await?
+The answer is something called continuation.
+The most important part is the await keyword because that is the suspension pointof calling the get post function.
+So if we had to expose our get post function as async and await, we can create a brand new function.
+get post, which is going to provide us the async await feature by calling our existing function.
+You can see over here that the width checked continuation and there are different variations of continuationis going to allow us to give that suspension point.
+func getPosts() async throws -> [Post] {
+return await withCheckedContinuation { continuation in 
+getPosts { post in 
+continuation.resume(returning:posts)
+}
+}
 
+This is going to suspend the execution.
+And then invoke our get both function, our old classic legacy, get both function, get all the post
+and then resume the suspension by calling continuation or resume.
+So that's the main concept behind continuation
 
 
 
